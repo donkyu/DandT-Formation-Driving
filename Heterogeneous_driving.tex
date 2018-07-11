@@ -149,7 +149,7 @@ BYD K9		&0.098	&9.8946	&1.2324		&0.00044		&1000	&492.56	&90	&0.000018696	&0.4095
 
 \begin{figure}	%Fig. 1
 \centering
-\includegraphics[width=0.9\hsize]{Figures/DSE.pdf}
+\includegraphics[width=0.8\hsize]{Figures/DSE.pdf}
 \caption{Design space exploration of (a) Tesla Model S and (b) BYD K9.}
 \label{fig:DSE}
 \end{figure} 
@@ -170,29 +170,28 @@ Each BEV type has different curb weight, motor specification, body shape, and ti
 \end{figure} 
 
 A set of formation BEVs on the same lane. $N$ BEVs, and a BEV $EV_i$ has a power models defined by~\eqref{eq:dynamics_model}, \eqref{eq:EV_specific_model}, \eqref{eq:regen_model}, and related coefficients in Table~\ref{table:Coeff_EVs}.
-No interference is assumed for the formation, i.e., no other vehicles, no pedestrians, etc.
+No interference is assumed for the formation, i.e., no other vehicles, no pedestrians, etc., nearby the formation.
 The formation driving consists of three stages: a constant acceleration, a constant-speed cruising and a constant deceleration.
-A segment of the formation driving is from a signal to a signal, a stop sign to a stop sign, and so forth.
+A segment of the formation driving is between two traffic signals, between two stop signs, and so forth.
 Use of a V2V communication, BEVs in the same formation can share their vehicle information, i.e., power model coefficients.
 Each BEV weight is defined by the curb weight and the payload: passengers and cargos. The curb weight is known a priori, and the payload is measured by the sensor. 
 
-Baseline is defined as following:
+We define the baseline as follows:
 \begin{enumerate}
-\item Ideal driving: each vehicle has its own minimum-energy acceleration, cruising speed and deceleration. 
-It is permitted to pass a preceding vehicle.
-\item Bounded driving: each vehicle has its own minimum-energy acceleration, cruising speed and deceleration guideline. If the acceleration or cruising speed of the preceding vehicle is slower than that of the following vehicle, the acceleration or cruising speed of the following vehicle is bounded to that of the preceding vehicle.
+\item Independent eco driving: each BEV has its own minimum-energy acceleration, cruising speed and deceleration. 
+It is permitted to pass a preceding vehicle. This is possible when each BEV occupies its own lane.
+\item Following the preceding vehicle: each BEV has its own minimum-energy acceleration, cruising speed and deceleration guideline. However, the acceleration or cruising speed of the following BEV is bounded by those of the preceding BEV.
 \end{enumerate}
 
 %Problem
-For a given formation, a set of BEV and their order, minimize the total energy consumption.
-The formation acceleration, cruising speed and deceleration is defined by the recommended reference. Each BEV may not follow the formation driving reference as long as it does not interfere other BEV formation driving. For example, the first BEV may be driven faster than the formation cruising speed as long as it exhibits a smaller energy consumption.
-Calculate the least-energy acceleration, cruising speed and deceleration.
+The formation eco-driving problem can be rewritten such that for a given set of formation with the BEV models and lineup order, we minimize the total formation driving energy consumption.
+The problem formulation accommodates a more realistic situation. The formation acceleration, cruising speed and deceleration are regarded as a reference. Each BEV may not follow the formation driving reference as long as it does not interfere other BEV formation driving. For example, the first BEV may be driven faster than the formation cruising speed as long as it exhibits a smaller energy consumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Results}\label{sec:exp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Driving Comparison by Vehicle Type}
+\subsection{Comparison by Vehicle Types}
 
 \begin{table} 	%Table 2.
 \centering
@@ -209,13 +208,13 @@ Index	&Vehicle	&Type		&Index	&Vehicle	&Type 	\\ \hline
 
 \begin{figure}	%Fig. 3
 \centering
-\includegraphics[width=1.0\hsize]{Figures/Heterogeneous_driving.pdf}
+\includegraphics[width=0.9\hsize]{Figures/Heterogeneous_driving.pdf}
 \caption{Heterogeneous BEV driving by (a) passing a preceding vehicle is permitted, and (b) passing is not permitted.}
 \label{fig:hetero_driving}
 \end{figure} 
 
-We assume an example driving of five BEVs in Table~\ref{table:list_EVs}. A formation is Spark (last) - Roadster - Model S - Bolt - K9 (lead.)
-The distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
+We assume an example driving of five BEVs in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- Kia K9 (head.)
+The driving segement distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
 Fig.~\ref{fig:hetero_driving}(a) shows the ideal driving of the five BEVs over time if it is permitted to pass a preceding vehicle.  
 Each BEV arrives at the endpoint in different time because they drive with different acceleration and cruising speed.
 K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among all BEVs.

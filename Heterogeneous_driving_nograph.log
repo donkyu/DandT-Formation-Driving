@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.19)  12 JUL 2018 01:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.19)  12 JUL 2018 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Heterogeneous_driving.tex
-(./Heterogeneous_driving.tex
+**Heterogeneous_driving_nograph.tex
+(./Heterogeneous_driving_nograph.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (./IEEEtran.cls
@@ -644,8 +644,8 @@ Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
 (/usr/local/texlive/2015/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-(./Heterogeneous_driving.aux)
-\openout1 = `Heterogeneous_driving.aux'.
+(./Heterogeneous_driving_nograph.aux)
+\openout1 = `Heterogeneous_driving_nograph.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -855,79 +855,59 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 
 Non-PDF special ignored!
 
-] <Figures/DSE.pdf, id=14, 289.08pt x 485.815pt>
-File: Figures/DSE.pdf Graphic file (type pdf)
+]
 
-<use Figures/DSE.pdf>
-Package pdftex.def Info: Figures/DSE.pdf used on input line 146.
-(pdftex.def)             Requested size: 201.60077pt x 338.80057pt.
- <Figures/Example.pdf, id=15, 231.92015pt x 29.44179pt>
-File: Figures/Example.pdf Graphic file (type pdf)
+LaTeX Warning: Reference `table:Coeff_EVs' on page 2 undefined on input line 11
+3.
 
-<use Figures/Example.pdf>
-Package pdftex.def Info: Figures/Example.pdf used on input line 161.
-(pdftex.def)             Requested size: 252.0pt x 31.9925pt.
 
-Underfull \hbox (badness 3895) in paragraph at lines 175--177
-[]\OT1/ptm/m/n/10 Independent eco-driving: each BEV has its own
- []
+LaTeX Warning: Reference `table:Coeff_EVs' on page 2 undefined on input line 16
+6.
 
-[2 <./Figures/DSE.pdf> <./Figures/Example.pdf>]
-Overfull \hbox (0.84464pt too wide) in paragraph at lines 195--201
- [][] 
- []
 
-<Figures/Heterogeneous_driving.pdf, id=82, 301.125pt x 494.84875pt>
-File: Figures/Heterogeneous_driving.pdf Graphic file (type pdf)
+LaTeX Warning: Reference `table:list_EVs' on page 2 undefined on input line 211
+.
 
-<use Figures/Heterogeneous_driving.pdf>
-Package pdftex.def Info: Figures/Heterogeneous_driving.pdf used on input line 2
-05.
-(pdftex.def)             Requested size: 226.79846pt x 372.72131pt.
+[2]
 
-<Figures/Bar_graph.pdf, id=83, 441.82657pt x 212.86546pt>
-File: Figures/Bar_graph.pdf Graphic file (type pdf)
+LaTeX Warning: Reference `table:list_formation' on page 3 undefined on input li
+ne 245.
 
-<use Figures/Bar_graph.pdf>
-Package pdftex.def Info: Figures/Bar_graph.pdf used on input line 240.
-(pdftex.def)             Requested size: 252.0pt x 121.41252pt.
- [3 <./Figures/Heterogeneous_driving.pdf>]
-<Figures/Driving_comparison.pdf, id=124, 285.065pt x 470.75874pt>
-File: Figures/Driving_comparison.pdf Graphic file (type pdf)
-
-<use Figures/Driving_comparison.pdf>
-Package pdftex.def Info: Figures/Driving_comparison.pdf used on input line 254.
-
-(pdftex.def)             Requested size: 252.0pt x 416.15097pt.
- (./Heterogeneous_driving.bbl
-Underfull \hbox (badness 2253) in paragraph at lines 38--41
+(./Heterogeneous_driving_nograph.bbl
+Underfull \hbox (badness 2253) in paragraph at lines 48--51
 []\OT1/ptm/m/n/8 ``2018 chevro-let Bolt EV fea-tures and spec-i-fi-ca-tions.'' 
 Chevro-let
  []
 
-) [4 <./Figures/Bar_graph.pdf> <./Figures/Driving_comparison.pdf>]
-(./Heterogeneous_driving.aux) ) 
+) [3] (./Heterogeneous_driving_nograph.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5181 strings out of 493089
- 71462 string characters out of 6134841
- 157705 words of memory out of 5000000
- 8482 multiletter control sequences out of 15000+600000
- 66933 words of font info for 134 fonts, out of 8000000 for 9000
+ 5138 strings out of 493089
+ 70729 string characters out of 6134841
+ 152686 words of memory out of 5000000
+ 8450 multiletter control sequences out of 15000+600000
+ 58742 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,17n,26p,732b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dv
-ips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Heterogeneous_driving.pdf (4 pages, 686116 bytes).
+ 38i,17n,26p,740b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on Heterogeneous_driving_nograph.pdf (3 pages, 99656 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
+ 47 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

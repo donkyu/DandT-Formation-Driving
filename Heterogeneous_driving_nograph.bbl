@@ -15,10 +15,20 @@ W.~Dib, L.~Serrao, and A.~Sciarretta, ``Optimal control to minimize trip time
   and energy consumption in electric vehicles,'' in {\em Proceedings of IEEE
   Vehicle Power and Propulsion Conference}, 2011.
 
+\bibitem{Yan:NAPS14}
+Q.~Yan, B.~Zhang, and M.~Kezunovic, ``Optimization of electric vehicle movement
+  for efficient energy consumption,'' in {\em North American Power Symposium
+  (NAPS)}, 2014.
+
 \bibitem{Dib:CEP14}
 W.~Dib, A.~Chasse, P.~Moulin, A.~Sciarretta, and G.~Corde, ``Optimal energy
   management for an electric vehicle in eco-driving applications,'' {\em
   Control Engineering Practice}, 2014.
+
+\bibitem{Shreejith:ESL13}
+S.~Shreejith, S.~A. Fahmy, and M.~Lukasiewycz, ``Reconfigurable computing in
+  next-generation automotive networks,'' {\em IEEE Embedded Systems Letters},
+  2013.
 
 \bibitem{Park:DAC13}
 S.~Park, Y.~Kim, and N.~Chang, ``Hybrid energy storage systems and battery

@@ -185,7 +185,32 @@ The problem formulation accommodates a more realistic situation. The formation a
 \section{Experimental Results}\label{sec:exp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Comparison by Vehicle Types}
+%\subsection{Comparison by Vehicle Types}
+
+
+For more comprehensive comparison, we assume several driving cases of five BEVs sunmmarized in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- Kia K9 (head.)
+The driving segement distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
+Fig.~\ref{fig:hetero_driving}(a) shows the independent eco-driving of the five BEVs over time. Independent eco-driving is not a formation driving, and thus each BEV arrives at the endpoint at different times.
+K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among the BEVs in this example. 
+Fig.~\ref{fig:hetero_driving}(b) shows the drivings of the five BEVs on a single lane, and no passing is allowed. 
+
+\begin{figure}	%Fig. 3
+\centering
+\includegraphics[width=0.9\hsize]{Figures/Heterogeneous_driving.pdf}
+\caption{Heterogeneous BEV driving by (a) passing a preceding vehicle is permitted, and (b) passing is not permitted.}
+\label{fig:hetero_driving}
+\end{figure} 
+
+
+One of the baseline, following the preceding BEV, enforces the acceleration and cruising speed are bounded by those of the preceding vehicle while the preceding vehicle accelerates and/or cruises by its own eco-driving policy or by its preceding BEV. Therefore, this particular example enforces all the BEVs in the formation to have the acceleration and cruising speed bounded by those of K9. Total energy consumption of the five BEVs is as 109.7\% compared with the independent eco-driving.
+On the other hands, the formation driving consumes only 104.0\% of energy consumption of the independent eco-driving with the proposed formation eco-driving~\ref{subsec:problem}.
+
+
+We assume a case study of heterogeneous BEV driving with 10 BEVs. Table~\ref{table:list_formation} summarizes the formations of 10 BEVs. 
+Fig.~\ref{fig:bar_graph} shows the comparisons of the energy consumption of 10 BEVs for the driving. Blue bars indicate the energy consumption by following the preceding vehicle. Blue bars show 100\% energy consumption in this figure. Green bars indicate the energy consumption by the formation eco-driving, and orange bars indicate the independent eco-driving.
+The energy gain by the proposed formation eco-driving compared with following the preceding vehicle is from 1.41\% to 12.81\%. 
+
+%\subsection{Driving Case Study}
 
 \begin{table} 	%Table 2.
 \centering
@@ -200,26 +225,7 @@ Index	&Vehicle	&Type		&Index	&Vehicle	&Type 	\\ \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}	%Fig. 3
-\centering
-\includegraphics[width=0.9\hsize]{Figures/Heterogeneous_driving.pdf}
-\caption{Heterogeneous BEV driving by (a) passing a preceding vehicle is permitted, and (b) passing is not permitted.}
-\label{fig:hetero_driving}
-\end{figure} 
 
-We assume an example driving of five BEVs in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- Kia K9 (head.)
-The driving segement distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
-Fig.~\ref{fig:hetero_driving}(a) shows the independent eco-driving of the five BEVs over time. Independent eco-driving is not a formation driving, and thus each BEV arrives at the endpoint at different times.
-K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among the BEVs in this example.
-
-********
-Fig.~\ref{fig:hetero_driving}(b) shows the drivings of the five BEVs if it is not permitted to pass a preceding vehicle. 
-
-In the case of following the preceding vehicle, the acceleration and cruising speed are bounded to those of the preceding vehicle. Therefore, acceleration and cruising speed of all BEVs are bounded to those of K9 in this example. Total energy consumption of the five BEVs is as 109.7\% of the energy consumption of the independent eco-driving.
-On the other hands, if they drive with the formation eco-driving mentioned in Section~\ref{subsec:problem}, it consume only 104.0\% of energy consumption of the independent eco-driving.
-This means that increasing the acceleration and cruising speed of the bus is more efficient for all BEVs in the given formation.
-
-\subsection{Driving Case Study}
 
 \begin{table} 	%Table 3.
 \centering
@@ -227,11 +233,11 @@ This means that increasing the acceleration and cruising speed of the bus is mor
 \caption{List of heterogeneous driving formations.}
 \label{table:list_formation}
 \begin{tabular}{|c|c|} \hline
-No.	&EV formation from last to lead	\\ \hline
-1	&3 2 3 5 3 5 1 5 3 4	\\ \hline
-2	&3 2 3 5 3 5 3 4 5 1	\\ \hline
-3	&3 5 3 4 5 3 5 3 2 1	\\ \hline
-4	&4 3 2 3 5 3 5 1 5 3	\\ \hline
+Formations	& BEV formation from the tail to head	\\ \hline
+A	&3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 1 -- 5 -- 3 -- 4	\\ \hline
+B	&3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 3 -- 4 -- 5 -- 1	\\ \hline
+C	&3 -- 5 -- 3 -- 4 -- 5 -- 3 -- 5 -- 3 -- 2 -- 1	\\ \hline
+D	&4 -- 3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 1 -- 5 -- 3	\\ \hline
 \end{tabular}
 \end{table}
 
@@ -242,9 +248,7 @@ No.	&EV formation from last to lead	\\ \hline
 \label{fig:bar_graph}
 \end{figure} 
 
-We assume a case study of heterogeneous BEV driving with 10 BEVs. Table~\ref{table:list_formation} shows the formations of 10 BEVs. 
-Fig.~\ref{fig:bar_graph} shows the comparisons of the energy consumption of 10 BEVs for the driving. Blue bars indicate the energy consumption by following the preceding vehicle. Blue bars show 100\% energy consumption in this figure. Green bars indicate the energy consumption by the formation eco-driving, and orange bars indicate the independent eco-driving.
-The energy gain by the proposed formation eco-driving compared with following the preceding vehicle is from 1.41\% to 12.81\%. 
+
 
 In case of formation 1, the bus is in the lead, and it is very common that driving is bounded by a bus ahead. In this formation, drivings of all BEVs are bounded to the least-energy cruising speed of the bus. The gain by the proposed formation eco-driving is 12.81\% compared with the following the preceding vehicle.
 In case of formation 4, the least-energy cruising speeds of two leading BEVs (hatchback and convertible) are faster than a recommended reference, and that of the last BEV (bus) is slower than the reference. Therefore, these three BEVs drive their own optimal, and only seven BEVs follow the reference as shown in Fig.~\ref{fig:driving_comp}.

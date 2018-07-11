@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 JUL 2018 07:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 JUL 2018 07:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -603,62 +603,171 @@ Underfull \hbox (badness 6001) in paragraph at lines 45--45
 \OT1/ptm/m/n/8 of Ko-rea (NRF) grant funded by the Ko-rea gov-ern-ment (MSIP)
  []
 
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 80
+
+LaTeX Warning: Citation `Lin:ICCA14' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Wu:ITS15' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Dib:IVPPC11' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Yan:NAPS14' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Dib:CEP14' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Wu:ITS15' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Shreejith:ESL13' on page 1 undefined on input line 65.
+
+
+
+LaTeX Warning: Reference `eq:dynamics_model' on page 1 undefined on input line 
+79.
+
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 81
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 80
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 81
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 80
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 81
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 80
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 81
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 81.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 81.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
- [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+
+
+LaTeX Warning: Citation `Park:DAC13' on page 1 undefined on input line 88.
+
+
+LaTeX Warning: Reference `eq:dynamics_model' on page 1 undefined on input line 
+89.
+
+
+LaTeX Warning: Citation `Hong:ASPDAC16' on page 1 undefined on input line 90.
+
+[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 Non-PDF special ignored!
 <special> papersize=7.875in,10.75in
 
 ]
+
+LaTeX Warning: Reference `eq:EV_specific_model' on page 2 undefined on input li
+ne 98.
+
+
+LaTeX Warning: Citation `Dib:IVPPC11' on page 2 undefined on input line 98.
+
+
+LaTeX Warning: Citation `Dib:CEP14' on page 2 undefined on input line 98.
+
+
+LaTeX Warning: Reference `eq:regen_model' on page 2 undefined on input line 99.
+
+
+
+LaTeX Warning: Citation `Markel:JPS02' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Reference `eq:EV_specific_model' on page 2 undefined on input li
+ne 111.
+
+
+LaTeX Warning: Citation `GM_Bolt:official' on page 2 undefined on input line 11
+2.
+
+
+LaTeX Warning: Citation `Tesla_ModelS:official' on page 2 undefined on input li
+ne 112.
+
+
+LaTeX Warning: Citation `GM_Spark:official' on page 2 undefined on input line 1
+12.
+
+
+LaTeX Warning: Citation `BYD_K9:official' on page 2 undefined on input line 112
+.
+
+
+LaTeX Warning: Citation `Tesla_Roadster:official' on page 2 undefined on input 
+line 112.
+
+
+LaTeX Warning: Reference `table:Coeff_EVs' on page 2 undefined on input line 11
+3.
+
+
+LaTeX Warning: Reference `eq:EV_specific_model' on page 2 undefined on input li
+ne 113.
+
+
+LaTeX Warning: Reference `eq:regen_model' on page 2 undefined on input line 113
+.
+
 <Figures/DSE.pdf, id=14, 289.08pt x 485.815pt>
 File: Figures/DSE.pdf Graphic file (type pdf)
 <use Figures/DSE.pdf>
-Package pdftex.def Info: Figures/DSE.pdf  used on input line 145.
+Package pdftex.def Info: Figures/DSE.pdf  used on input line 146.
 (pdftex.def)             Requested size: 226.79846pt x 381.14322pt.
+
+LaTeX Warning: Reference `fig:DSE' on page 2 undefined on input line 152.
+
 <Figures/Example.pdf, id=15, 231.92015pt x 29.44179pt>
 File: Figures/Example.pdf Graphic file (type pdf)
 <use Figures/Example.pdf>
-Package pdftex.def Info: Figures/Example.pdf  used on input line 160.
+Package pdftex.def Info: Figures/Example.pdf  used on input line 161.
 (pdftex.def)             Requested size: 252.0pt x 31.9925pt.
- [2 <./Figures/DSE.pdf> <./Figures/Example.pdf>]
-Overfull \hbox (0.84464pt too wide) in paragraph at lines 195--201
+
+LaTeX Warning: Reference `eq:dynamics_model' on page 2 undefined on input line 
+166.
+
+
+LaTeX Warning: Reference `eq:EV_specific_model' on page 2 undefined on input li
+ne 166.
+
+
+LaTeX Warning: Reference `eq:regen_model' on page 2 undefined on input line 166
+.
+
+
+LaTeX Warning: Reference `table:Coeff_EVs' on page 2 undefined on input line 16
+6.
+
+[2 <./Figures/DSE.pdf> <./Figures/Example.pdf>]
+Overfull \hbox (0.84464pt too wide) in paragraph at lines 196--202
  [][] 
  []
 
@@ -666,46 +775,81 @@ Overfull \hbox (0.84464pt too wide) in paragraph at lines 195--201
 File: Figures/Heterogeneous_driving.pdf Graphic file (type pdf)
 <use Figures/Heterogeneous_driving.pdf>
 Package pdftex.def Info: Figures/Heterogeneous_driving.pdf  used on input line 
-205.
+206.
 (pdftex.def)             Requested size: 252.0pt x 414.13731pt.
+
+LaTeX Warning: Reference `table:list_EVs' on page 3 undefined on input line 211
+.
+
+
+LaTeX Warning: Reference `fig:hetero_driving' on page 3 undefined on input line
+ 213.
+
+
+LaTeX Warning: Reference `fig:hetero_driving' on page 3 undefined on input line
+ 216.
+
+
+LaTeX Warning: Reference `subsec:problem' on page 3 undefined on input line 219
+.
+
 <Figures/Bar_graph.pdf, id=83, 445.7187pt x 188.71675pt>
 File: Figures/Bar_graph.pdf Graphic file (type pdf)
 <use Figures/Bar_graph.pdf>
-Package pdftex.def Info: Figures/Bar_graph.pdf  used on input line 239.
+Package pdftex.def Info: Figures/Bar_graph.pdf  used on input line 240.
 (pdftex.def)             Requested size: 252.0pt x 106.69714pt.
+
+LaTeX Warning: Reference `table:list_formation' on page 3 undefined on input li
+ne 245.
+
+
+LaTeX Warning: Reference `fig:bar_graph' on page 3 undefined on input line 246.
+
+
 [3 <./Figures/Heterogeneous_driving.pdf>]
+
+LaTeX Warning: Reference `fig:driving_comp' on page 4 undefined on input line 2
+50.
+
 <Figures/Driving_comparison.pdf, id=124, 285.065pt x 470.75874pt>
 File: Figures/Driving_comparison.pdf Graphic file (type pdf)
 <use Figures/Driving_comparison.pdf>
-Package pdftex.def Info: Figures/Driving_comparison.pdf  used on input line 253
+Package pdftex.def Info: Figures/Driving_comparison.pdf  used on input line 254
 .
 (pdftex.def)             Requested size: 252.0pt x 416.15097pt.
- (./Heterogeneous_driving.bbl
+(./Heterogeneous_driving.bbl
 Underfull \hbox (badness 2253) in paragraph at lines 48--51
 []\OT1/ptm/m/n/8 ``2018 chevro-let Bolt EV fea-tures and spec-i-fi-ca-tions.'' 
 Chevro-let
  []
 
 ) [4 <./Figures/Bar_graph.pdf> <./Figures/Driving_comparison.pdf>]
-(./Heterogeneous_driving.aux) ) 
+(./Heterogeneous_driving.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4996 strings out of 492649
- 70147 string characters out of 6129622
- 159063 words of memory out of 5000000
+ 4997 strings out of 492649
+ 70153 string characters out of 6129622
+ 158889 words of memory out of 5000000
  8705 multiletter control sequences out of 15000+600000
- 66933 words of font info for 134 fonts, out of 8000000 for 9000
+ 68040 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,27p,732b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dv
-ips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Heterogeneous_driving.pdf (4 pages, 680694 bytes).
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on Heterogeneous_driving.pdf (4 pages, 681902 bytes).
 PDF statistics:
  253 PDF objects out of 1000 (max. 8388607)
  180 compressed objects within 2 object streams

@@ -59,11 +59,12 @@ Battery Electric vehicles, heterogeneous driving, formation eco-driving
 
 \section{Introduction}
 
-Eco-driving is a useful way to save energy consumption without modifying the vehicles.
-Eco-driving has been widely observed for internal combustion engine vehicles, but the methods cannot be used for battery electric vehicles (BEVs) due to the fundamental discrepancies between the internal combustion engine powertrain and electric powertrain.
-Recently, there has been previous research on BEV-specific eco-driving that reflect electric powertrain characteristics~\cite{Lin:ICCA14, Wu:ITS15, Dib:IVPPC11}. However, such work focuses on single BEV even though some work is aware of the traffic condition~\cite{Yan:NAPS14, Dib:CEP14, Wu:ITS15}. 
-Currently, up to one hundred electronic control units (ECUs) are used for autonomous vehicle driving such as adaptive cruise control (ACC). In addition, computing techniques for processing a large amount of data with limited resources are proposed for V2V (vehicle to vehicle) communication~\cite{Shreejith:ESL13}.
-This paper introduces a formation eco-driving of heterogeneous BEVs on the same lane. The BEVs accelerate and cruise without disturbing other BEVs in the same formation calculating the most efficient acceleration, cruising speed and deceleration for the formation. 
+It is well known that eco-driving gains a significant fuel efficiency without upgrading the vehicles.
+Eco-driving methods have been widely mentioned for internal combustion engine vehicles, but such methods can hardly be used for battery electric vehicles (BEVs) due to the fundamental discrepancies between the internal combustion engine powertrain and electric powertrain.
+Recent previous research on BEV-specific eco-driving begins to reflect electric powertrain characteristics~\cite{Lin:ICCA14, Wu:ITS15, Dib:IVPPC11}. However, such work focuses on single BEV even though some work is aware of the traffic condition~\cite{Yan:NAPS14, Dib:CEP14, Wu:ITS15}. 
+Currently, up to one hundred electronic control units (ECUs) are used for autonomous vehicle driving such as adaptive cruise control (ACC). In addition, computing techniques for processing a large amount of data with limited resources are proposed for V2V (vehicle to vehicle) communication~\cite{Shreejith:ESL13}. As a result, formation driving, which accelerate and cruise the vehicles in the same group, is real. Formation driving efficiently enhances the transportation throughput and can also gain fuel economy due to the reduced air dragging as a byproduct.
+
+This paper introduces a \textit{formation eco-driving of heterogeneous BEVs} on a single lane. The BEVs accelerate and cruise without disturbing other BEVs in the same formation calculating the most efficient acceleration, cruising speed and deceleration for the formation. Unlike the previous work, this paper primarily saves energy consumption of BEVs through the proposed formation eco-driving. 
 %This paper takes into account both energy consumption and throughput. To do so, we optimize the total energy-delay product of BEVs in the same formation. 
 %We also give a more benefits for a heavy-duty commercial vehicles and propose another optimization metric such as energy-mass-delay product. 
 We formulate the formation eco-driving problem more realistic such that the formation is not necessarily maintained as long as a BEV does not interfere the other BEVs. For example, the first BEV in the formation may be driven faster than the formation speed if the most-efficient speed for the first BEV is higher than the optimal formation speed. 
@@ -86,7 +87,7 @@ P_{trac} &\approx (\alpha  + \beta sin\theta + \gamma a + \delta v^2)mv
 \end{equation}
 where $F_R$, $F_G$, $F_I$, $F_A$, and $F_B$ denote the rolling resistance, gradient resistance, inertia resistance, aerodynamic resistance, and brake force provided by hydraulic brakes, respectively~\cite{Park:DAC13}. The coefficients $\alpha$, $\beta$, $\gamma$, and $\delta$ correspond to the rolling resistance, gradient resistance, inertia resistance, and aerodynamic resistance, respectively.
 Adding a traction motor efficiency in~\eqref{eq:dynamics_model} makes more realistic EV power consumption characteristics. $\eta_{EV*}$ is determined by motor loss and drivetrain.  
-We borrow an EV-specific power ($EV^*$) modeling method considering the loss in EV drivetrain using a multivariable regression method from the measured power data and achieve a polynomial fitting~\cite{Hong:ASPDAC16}.
+We borrow an EV-specific power ($P_{EV^*}$) modeling method considering the loss in EV drivetrain using a multivariable regression method from the measured power data and achieve a polynomial fitting~\cite{Hong:ASPDAC16}.
 
 \begin{equation} \label{eq:EV_specific_model} %equation 2
 P_{EV^*} = \frac{P_{trac}}{\eta_{EV^*}}
@@ -95,7 +96,7 @@ P_{EV^*} = \frac{P_{trac}}{\eta_{EV^*}}
 \eta_{EV^*} = \frac{P_{trac}}{{P_{trac} + C_0 + C_1 v + C_2 v^2 + C_3 T^2}}\nonumber
 \end{equation}	
 where $C_0$, $C_1$, $C_2$, and $C_3$ mean coefficients for constant loss, iron and friction losses, drivetrain loss, and copper loss, respectively. The power consumption model~\eqref{eq:EV_specific_model} is commonly used in various analytical EV power managements~\cite{Dib:IVPPC11, Dib:CEP14}.
-EVs mostly use regenerative braking during deceleration, which converts kinetic energy to electric energy. The harvested energy from regenerative braking is closely related to the electromagnetic flux inside of the motor, and the flux is proportional to the motor RPM. The regenerative braking model of an EV is simplified as~\eqref{eq:regen_model} 
+EVs mostly use regenerative braking during deceleration, which converts kinetic energy to electric energy. The harvested energy from regenerative braking is closely related to the electromagnetic flux inside of the motor, and the flux is proportional to the motor RPM. The regenerative braking model of an EV is simplified as~\eqref{eq:regen_model}.
 
 \begin{equation}\label{eq:regen_model} 
 P_{regen} = \epsilon T v + \zeta
@@ -105,7 +106,7 @@ where $\epsilon$ and $\zeta$ are regenerative braking coefficients.
 \subsection{Electric Vehicle Power Model Library}
 
 ADVISOR is a vehicle simulator that takes into account various factors of vehicles including engines, electric traction motors, types of drivetrains, shape of chassis, etc.~\cite{Markel:JPS02}. 
-It is not acceptable to use ADVISOR for estimation of power consumption of multiple vehicles at the same time and exploration of design space. 
+However, it is not practical to use ADVISOR for estimation of power consumption of multiple vehicles at the same time and exploration of design space due to the significant time overhead. 
 So, instead of using ADVISOR for the speed optimization, we use ADVISOR for the model coefficient extraction. 
 In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR.
 We implement several types of BEV power model based on the vehicle specifications and reports for the driving performance and range at various constant road slopes~\cite{GM_Bolt:official,Tesla_ModelS:official,GM_Spark:official,BYD_K9:official,Tesla_Roadster:official}. 
@@ -135,10 +136,10 @@ BYD K9		&0.098	&9.8946	&1.2324		&0.00044		&1000	&492.56	&90	&0.000018696	&0.4095
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Formation Eco-Driving of Problems}\label{sec:problem}
+\section{Formation Eco-Driving}\label{sec:problem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Motivation}
+\subsection{Motivational Example}
 
 \begin{figure}	%Fig. 1
 \centering
@@ -148,7 +149,7 @@ BYD K9		&0.098	&9.8946	&1.2324		&0.00044		&1000	&492.56	&90	&0.000018696	&0.4095
 \end{figure} 
 
 
-We demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on an BEV sedan (Model S) and bus (K9) are shown in Fig.~\ref{fig:DSE}. 
+We first demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on an BEV sedan (Model S) and bus (K9) are shown in Fig.~\ref{fig:DSE}. 
 We obtain the minimum-energy speed and the initial and final acceleration for a given driving distance. 
 The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs also completely changes by the BEV type. 
 Each BEV type has different curb weight, motor specification, body shape, and tire, which affect energy consumption by acceleration and cruising speed, and, therefore, each BEV type has different least-energy-constant-speed driving.

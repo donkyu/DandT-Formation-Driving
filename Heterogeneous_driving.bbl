@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+
+\bibitem{Lin:ICCA14}
+X.~Lin, D.~Gorges, and S.~Liu, ``Eco-driving assistance system for electric
+  vehicles based on speed profile optimization,'' in {\em Proceedings of IEEE
+  Conference on Control Applications}, 2014.
+
+\bibitem{Wu:ITS15}
+X.~Wu, X.~He, and G.~Yu, ``Energy-optimal speed control for electric vehicles
+  on signalized arterials,'' {\em Transactions on Intelligent Transportation
+  Systems, vol. 16, no. 5}, 2015.
+
+\bibitem{Dib:IVPPC11}
+W.~Dib, L.~Serrao, and A.~Sciarretta, ``Optimal control to minimize trip time
+  and energy consumption in electric vehicles,'' in {\em Proceedings of IEEE
+  Vehicle Power and Propulsion Conference}, 2011.
+
+\bibitem{Yan:NAPS14}
+Q.~Yan, B.~Zhang, and M.~Kezunovic, ``Optimization of electric vehicle movement
+  for efficient energy consumption,'' in {\em North American Power Symposium
+  (NAPS)}, 2014.
+
+\bibitem{Dib:CEP14}
+W.~Dib, A.~Chasse, P.~Moulin, A.~Sciarretta, and G.~Corde, ``Optimal energy
+  management for an electric vehicle in eco-driving applications,'' {\em
+  Control Engineering Practice}, 2014.
+
+\bibitem{Shreejith:ESL13}
+S.~Shreejith, S.~A. Fahmy, and M.~Lukasiewycz, ``Reconfigurable computing in
+  next-generation automotive networks,'' {\em IEEE Embedded Systems Letters},
+  2013.
+
+\bibitem{Park:DAC13}
+S.~Park, Y.~Kim, and N.~Chang, ``Hybrid energy storage systems and battery
+  management for electric vehicles,'' in {\em Proceedings of DAC}, 2013.
+
+\bibitem{Hong:ASPDAC16}
+J.~Hong, S.~Park, and N.~Chang, ``Accurate remaining range estimation for
+  electric vehicles,'' in {\em Proceedings of Asia and South Pacific Design
+  Automation and Conference (ASP-DAC)}, 2016.
+
+\bibitem{Markel:JPS02}
+T.~Markel, A.~Brooker, T.~Hendricks, V.~Johnson, and K.~Kelly, ``Advisor: a
+  systems analysis tool for advanced vehicle modeling,'' {\em Journal of Power
+  Sources}, 2002.
+
+\bibitem{GM_Bolt:official}
+``2018 chevrolet {B}olt {EV} features and specifications.'' Chevrolet Official
+  Website,
+  \url{http://www.chevrolet.ca/bolt-ev-electric-vehicle/specs/trims.html}.
+
+\bibitem{Tesla_ModelS:official}
+``Tesla {M}odel {S} {S}pecs.'' Tesla {O}fficial {W}ebsite,
+  \url{https://www.tesla.com/models}.
+
+\bibitem{GM_Spark:official}
+``Chevrolet {S}park {EV}.'' Chevrolet {O}fficial {W}ebsite,
+  \url{http://media.gm.com/media/us/en/chevrolet/vehicles/spark-ev/2016.tab1.html}.
+
+\bibitem{BYD_K9:official}
+``K9 {E}lectric {T}ransit {B}us {T}ech {S}pecs.'' BYD {O}fficial {W}ebsite,
+  \url{http://en.byd.com/usa/bus/k9-electric-transit-bus/#specs}.
+
+\bibitem{Tesla_Roadster:official}
+``Tesla {R}oadster {B}ase {S}pecs.'' Tesla {O}fficial {W}ebsite,
+  \url{https://www.tesla.com/roadster}.
+
+\end{thebibliography}

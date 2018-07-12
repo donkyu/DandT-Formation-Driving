@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.19)  12 JUL 2018 02:47
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUL 2018 09:45
 >>>>>>> 091949bce15bd47209f131c5803c124f25e5107b
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUL 2018 09:48
+>>>>>>> 37c00c8a70a426be84f20b0b87317beed6b1940d
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -909,7 +913,9 @@ Underfull \hbox (badness 2253) in paragraph at lines 38--41
 Chevro-let
  []
 
-) [4 <./Figures/Bar_graph.pdf> <./Figures/Driving_comparison.pdf>]
+[4 <./Figures/Bar_graph.pdf> <./Figures/Driving_comparison.pdf>]) [5
+
+]
 (./Heterogeneous_driving.aux) ) 
 Here is how much of TeX's memory you used:
  5181 strings out of 493089
@@ -929,6 +935,7 @@ al/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
 <<<<<<< HEAD
+<<<<<<< HEAD
 Output written on Heterogeneous_driving.pdf (4 pages, 689118 bytes).
 =======
 Output written on Heterogeneous_driving.pdf (4 pages, 687436 bytes).
@@ -936,6 +943,12 @@ Output written on Heterogeneous_driving.pdf (4 pages, 687436 bytes).
 PDF statistics:
  261 PDF objects out of 1000 (max. 8388607)
  186 compressed objects within 2 object streams
+=======
+Output written on Heterogeneous_driving.pdf (5 pages, 687865 bytes).
+PDF statistics:
+ 256 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+>>>>>>> 37c00c8a70a426be84f20b0b87317beed6b1940d
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

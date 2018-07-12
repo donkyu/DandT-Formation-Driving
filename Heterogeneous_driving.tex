@@ -47,11 +47,7 @@ Direct questions and comments about this article to Naehyuck Chang (naehyuck@cad
 \begin{abstract}
 Multiple-vehicle formation driving, which accelerates and cruises the vehicles with the same acceleration and speed, gains a higher transportation throughput. This paper introduces a \textit{formation eco-driving} for battery electric vehicles (BEV or all-electric vehicles powered solely by the battery.) We first calculate the least-energy cruising speed for each BEV in the same formation and derive the most energy-efficient formation speed. We assume V2V (vehicle to vehicle) communications that allow sharing the vehicle power models among the BEVs in the same formation. We address the formation eco-driving with a perspective of low-power embedded systems design in this paper.
 
-<<<<<<< HEAD
-We formulate the formation eco-driving focusing more on energy efficiency such that the formation is not strictly necessarily maintained as long as each BEV does not interfere with other vehicles in the formation, which is more realistic. We present accurate polynomial form of BEV power models that considers characteristics of electric powertrain as well as the optimization framework. Our experimental results show 12.81\% total energy saving of the whole formation of BEVs compared with the baseline. 
-=======
-We formulate the formation eco-driving focusing more on energy efficiency such that the formation is not strictly necessarily maintained as long as each BEV does not interfere other BEVs in the formation, which is more realistic. We present the optimization framework and accurate polynomial form of BEV power models that consider the characteristics of electric powertrain. The experimental results demonstrate up to  12.81\% total energy saving of the whole formation of BEVs compared with the baseline. 
->>>>>>> 965b7e8f712b767fe3b23baaca2c6e08cfe6edb1
+We formulate the formation eco-driving focusing more on energy efficiency such that the formation is not strictly necessarily maintained as long as each BEV does not interfere other BEVs in the formation, which is more realistic. We present the optimization framework and accurate polynomial form of BEV power models that consider the characteristics of electric powertrain. The experimental results demonstrate up to 12.81\% total energy saving of the whole formation of BEVs compared with the baseline. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -112,7 +108,8 @@ where $\epsilon$ and $\zeta$ are regenerative braking coefficients.
 ADVISOR is a vehicle simulator that takes into account various factors of vehicles including engines, electric traction motors, types of drivetrains, shape of chassis, etc.~\cite{Markel:JPS02}. 
 However, it is not practical to use ADVISOR for estimation of power consumption of multiple vehicles at the same time and exploration of design space due to the significant time overhead. 
 So, instead of using ADVISOR for the speed optimization, we use ADVISOR for the model coefficient extraction. 
-In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR. However, the BEV models in ADVISOR is outdated and limited, we collected up-to-date data for modern BEVs and their experimental data \cite{*****}. 
+In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR. However, the BEV models in ADVISOR is outdated and limited, we collected up-to-date data for modern BEVs and their experimental data.
+
 We implement several types of BEV power model based on the vehicle specifications and reports for the driving performance and range at various constant road slopes~\cite{GM_Bolt:official,Tesla_ModelS:official,GM_Spark:official,BYD_K9:official,Tesla_Roadster:official}. 
 Table \ref{table:Coeff_EVs} summarizes the model coefficients of \eqref{eq:EV_specific_model} and \eqref{eq:regen_model} of each BEV. 
 

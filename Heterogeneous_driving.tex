@@ -151,7 +151,7 @@ BYD K9		&0.098	&9.8946	&1.2324		&0.00044		&1000	&492.56	&90	&0.000018696	&0.4095
 
 We first demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on an BEV sedan (Model S) and bus (K9) are shown in Fig.~\ref{fig:DSE}. 
 We obtain the minimum-energy speed and the initial and final acceleration for a given driving distance. 
-The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs are largely different by the BEV type. 
+The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs is largely different by the BEV type. 
 Each BEV type has different curb weight, motor specification, body shape, and tire, which affect energy consumption by acceleration and cruising speed, and, therefore, each BEV type has different least-energy-constant-speed driving.
 
 \subsection{Problem formulation} \label{subsec:problem}
@@ -164,7 +164,7 @@ Each BEV type has different curb weight, motor specification, body shape, and ti
 \end{figure} 
 
 A set of formation BEVs on the same lane. $N$ BEVs, and a BEV $EV_i$ has a power models defined by~\eqref{eq:dynamics_model}, \eqref{eq:EV_specific_model}, \eqref{eq:regen_model}, and related coefficients in Table~\ref{table:Coeff_EVs}.
-No interference is assumed for the formation, i.e., no other vehicles, no pedestrians, etc., nearby the formation.
+No interference is assumed for the formation, i.e.,  no other vehicles, no pedestrians, etc., nearby the formation are assumed.
 The formation driving consists of three stages: a constant acceleration, a constant-speed cruising and a constant deceleration.
 A segment of the formation driving is between two traffic signals, between two stop signs, and so forth.
 Use of a V2V communication, BEVs in the same formation can share their vehicle information, i.e., power model coefficients.
@@ -173,7 +173,7 @@ Each BEV weight is defined by the curb weight and the payload: passengers and ca
 We define the baseline as follows:
 \begin{enumerate}
 \item Independent eco-driving: each BEV has its own minimum-energy acceleration, cruising speed and deceleration. 
-It is permitted to pass a preceding vehicle. This is possible when each BEV occupies its own lane.
+It is permitted to pass a preceding vehicle. This is possible when each BEV occupies its own lane. This is used for a golden reference to show how the proposed method is close to the ideal case.
 \item Following the preceding vehicle: each BEV has its own minimum-energy acceleration, cruising speed and deceleration guideline. However, the acceleration or cruising speed of the following BEV is bounded by those of the preceding BEV.
 \end{enumerate}
 

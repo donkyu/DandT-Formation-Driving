@@ -108,7 +108,7 @@ where $\epsilon$ and $\zeta$ are regenerative braking coefficients.
 ADVISOR is a vehicle simulator that takes into account various factors of vehicles including engines, electric traction motors, types of drivetrains, shape of chassis, etc.~\cite{Markel:JPS02}. 
 However, it is not practical to use ADVISOR for estimation of power consumption of multiple vehicles at the same time and exploration of design space due to the significant time overhead. 
 So, instead of using ADVISOR for the speed optimization, we use ADVISOR for the model coefficient extraction. 
-In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR. However, the BEV models in ADVISOR is outdated and limited, we collected up-to-date data for modern BEVs and their experimental data.
+In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR. However, the BEV models in ADVISOR is outdated and limited, we collect up-to-date data for modern BEVs and their experimental data.
 We implement several types of BEV power model based on the vehicle specifications and reports for the driving performance and range at various constant road slopes~\cite{GM_Bolt:official,Tesla_ModelS:official,GM_Spark:official,BYD_K9:official,Tesla_Roadster:official}. 
 Table \ref{table:Coeff_EVs} summarizes the model coefficients of \eqref{eq:EV_specific_model} and \eqref{eq:regen_model} of each BEV. 
 
@@ -151,7 +151,7 @@ BYD K9		&0.098	&9.8946	&1.2324		&0.00044		&1000	&492.56	&90	&0.000018696	&0.4095
 
 We first demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on an BEV sedan (Model S) and bus (K9) are shown in Fig.~\ref{fig:DSE}. 
 We obtain the minimum-energy speed and the initial and final acceleration for a given driving distance. 
-The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs also completely changes by the BEV type. 
+The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs are largely different by the BEV type. 
 Each BEV type has different curb weight, motor specification, body shape, and tire, which affect energy consumption by acceleration and cruising speed, and, therefore, each BEV type has different least-energy-constant-speed driving.
 
 \subsection{Problem formulation} \label{subsec:problem}

@@ -188,7 +188,7 @@ The problem formulation accommodates a more realistic situation. The formation a
 %\subsection{Comparison by Vehicle Types}
 
 
-For more comprehensive comparison, we assume several driving cases of five BEVs sunmmarized in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- Kia K9 (head.)
+For more comprehensive comparison, we assume several driving cases of five BEVs sunmmarized in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- BYD K9 (head.)
 The driving segement distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
 Fig.~\ref{fig:hetero_driving}(a) shows the independent eco-driving of the five BEVs over time. Independent eco-driving is not a formation driving, and thus each BEV arrives at the endpoint at different times.
 K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among the BEVs in this example. 
@@ -202,11 +202,11 @@ Fig.~\ref{fig:hetero_driving}(b) shows the drivings of the five BEVs on a single
 \end{figure} 
 
 
-One of the baseline, following the preceding BEV, enforces the acceleration and cruising speed are bounded by those of the preceding vehicle while the preceding vehicle accelerates and/or cruises by its own eco-driving policy or by its preceding BEV. Therefore, this particular example enforces all the BEVs in the formation to have the acceleration and cruising speed bounded by those of K9. Total energy consumption of the five BEVs is as 109.7\% compared with the independent eco-driving. We demonstrate the independent eco-driving baseline, which is not practical in most situations, just to show how the proposed formation eco-driving is close to the upper bound of eco-driving.
+One of the baseline setups, the following-the-preceding-vehicle policy, enforces the acceleration and cruising speed are bounded by those of the preceding vehicle while the preceding vehicle accelerates and/or cruises by its own eco-driving policy or by its preceding BEV. Therefore, this particular example enforces all the BEVs in the formation to have the acceleration and cruising speed bounded by those of K9. Total energy consumption of the five BEVs is as 109.7\% compared with the independent eco-driving. We demonstrate the independent eco-driving baseline, which is not practical in most situations, just to show how the proposed formation eco-driving is close to the upper bound of eco-driving.
 On the other hands, the formation driving consumes only 104.0\% of energy consumption of the independent eco-driving with the proposed formation eco-driving~\ref{subsec:problem}.
 
 
-We assume a case study of heterogeneous BEV driving with 10 BEVs. Table~\ref{table:list_formation} summarizes the formations of 10 BEVs. 
+We further look into the formation eco-driving with 10 heterogeneous BEVs summarized in Table~\ref{table:list_formation}.
 Fig.~\ref{fig:bar_graph} shows the comparisons of the energy consumption of 10 BEVs for the driving. Blue bars indicate the energy consumption of the  following-the-preceding-vehicle baseline. Blue bars show 100\% energy consumption in Fig.~\ref{fig:bar_graph}. Green bars indicate the energy consumption by the proposed formation eco-driving, and orange bars indicate the independent eco-driving.
 The energy gain by the proposed formation eco-driving compared with following-the-preceding-vehicle baseline is from 1.41\% to 12.81\%. 
 
@@ -255,7 +255,7 @@ By contrast, the least-energy cruising speeds of two leading BEVs (hatchback and
 
 \begin{figure}	%Fig. 5
 \centering
-\includegraphics[width=1.0\hsize]{Figures/Driving_comparison.pdf}
+\includegraphics[width=0.9\hsize]{Figures/Driving_comparison.pdf}
 \caption{Heterogeneous BEV driving result of (a) following the preceding vehicle and (b) formulation eco-driving in case of formation 4.}
 \label{fig:driving_comp}
 \end{figure} 

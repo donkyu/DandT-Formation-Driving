@@ -45,13 +45,13 @@ Direct questions and comments about this article to Naehyuck Chang (naehyuck@cad
 \maketitle
 
 \begin{abstract}
-Multiple-vehicle formation driving, which accelerates and cruises the vehicles with the same acceleration and speed, gains a higher transportation throughput. This paper introduces a \textit{formation eco-driving} for battery electric vehicles (BEV or all-electric vehicles powered solely by the battery.) We first calculate the least-energy cruising speed for each BEV in the same formation and derive the most energy-efficient formation speed. We assume V2V (vehicle to vehicle) communications that allows sharing the vehicle power models among the BEVs in the same formation. We address the formation eco-driving with a perspective of low-power embedded systems design in this paper.
+Multiple-vehicle formation driving, which accelerates and cruises the vehicles with the same acceleration and speed, gains a higher transportation throughput. This paper introduces a \textit{formation eco-driving} for battery electric vehicles (BEVs or all-electric vehicles powered solely by the battery.) We first calculate the minimum-energy cruising speed for each BEV in the same formation and derive the most energy-efficient formation speed. We assume V2V (vehicle to vehicle) communications that allow sharing the vehicle power models among the BEVs in the same formation. We address the formation eco-driving with a perspective of low-power embedded systems design in this paper.
 
-We formulate the formation eco-driving focusing more on energy efficiency such that the formation is not strictly necessarily maintained as long as each BEV does not interfere other vehicles in the formation, which is more realistic. We present accurate polynomial form of BEV power models that considers characteristics of electric powertrain as well as the optimization framework. Our experimental results show 12.81\% total energy saving of the whole formation of BEVs compared with the baseline. 
+We formulate the formation eco-driving focusing more on energy efficiency such that the formation is not strictly necessarily maintained as long as each BEV does not interfere other BEVs in the formation, which is more realistic. We present the optimization framework and accurate polynomial form of BEV power models that consider the characteristics of electric powertrain. The experimental results demonstrate up to 12.81\% total energy saving of the whole formation of BEVs compared with the baseline. 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Battery Electric vehicles, heterogeneous driving, formation eco-driving
+Battery Electric vehicles, heterogeneous electric vehicles, formation eco-driving, electric vehicle power model
 \end{IEEEkeywords}
 
 
@@ -61,13 +61,13 @@ Battery Electric vehicles, heterogeneous driving, formation eco-driving
 
 It is well known that eco-driving gains a significant fuel efficiency without upgrading the vehicles.
 Eco-driving methods have been widely mentioned for internal combustion engine vehicles, but such methods can hardly be used for battery electric vehicles (BEVs) due to the fundamental discrepancies between the internal combustion engine powertrain and electric powertrain.
-Recent previous research on BEV-specific eco-driving begins to reflect electric powertrain characteristics~\cite{Lin:ICCA14, Wu:ITS15, Dib:IVPPC11}. However, such work focuses on single BEV even though some work is aware of the traffic condition~\cite{Yan:NAPS14, Dib:CEP14, Wu:ITS15}. 
-Currently, up to one hundred electronic control units (ECUs) are used for autonomous vehicle driving such as adaptive cruise control (ACC). In addition, computing techniques for processing a large amount of data with limited resources are proposed for V2V (vehicle to vehicle) communication~\cite{Shreejith:ESL13}. As a result, formation driving, which accelerate and cruise the vehicles in the same group, is real. Formation driving efficiently enhances the transportation throughput and can also gain fuel economy due to the reduced air dragging as a byproduct.
+Recent previous research on BEV-specific eco-driving begins to reflect electric powertrain characteristics~\cite{Lin:ICCA14, Wu:ITS15, Dib:IVPPC11}. However, such work focuses on single BEV even though some work is aware of the traffic condition~\cite{Dib:CEP14, Wu:ITS15}. 
+Currently, up to one hundred electronic control units (ECUs) are used for autonomous vehicle driving such as adaptive cruise control (ACC). In addition, computing techniques for processing a large amount of data with limited resources are proposed for V2V (vehicle to vehicle) communication. As a result, formation driving, which accelerates and cruises the vehicles in the same group, is real. Formation driving efficiently enhances the transportation throughput and can also gain fuel economy due to the reduced air dragging as a byproduct.
 
-This paper introduces a \textit{formation eco-driving of heterogeneous BEVs} on a single lane. The BEVs accelerate and cruise without disturbing other BEVs in the same formation calculating the most efficient acceleration, cruising speed and deceleration for the formation. Unlike the previous work, this paper primarily saves energy consumption of BEVs through the proposed formation eco-driving. 
+This paper introduces a \textit{formation eco-driving of heterogeneous BEVs} on a single lane. The BEVs accelerate and cruise without disturbing other BEVs in the same formation calculating the most efficient acceleration, cruising speed and deceleration for the formation. Unlike the previous work, this paper explicitly and primarily saves energy consumption of BEVs through the proposed formation eco-driving. 
 %This paper takes into account both energy consumption and throughput. To do so, we optimize the total energy-delay product of BEVs in the same formation. 
 %We also give a more benefits for a heavy-duty commercial vehicles and propose another optimization metric such as energy-mass-delay product. 
-We formulate the formation eco-driving problem more realistic such that the formation is not necessarily maintained as long as a BEV does not interfere the other BEVs. For example, the first BEV in the formation may be driven faster than the formation speed if the most-efficient speed for the first BEV is higher than the optimal formation speed. 
+We formulate the formation eco-driving problem more realistic such that the formation is not necessarily maintained as long as a BEV does not interfere with the other BEVs. For example, the first BEV in the formation may be driven faster than the formation speed if the most-efficient speed for the first BEV is higher than the optimal formation speed. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,7 +108,8 @@ where $\epsilon$ and $\zeta$ are regenerative braking coefficients.
 ADVISOR is a vehicle simulator that takes into account various factors of vehicles including engines, electric traction motors, types of drivetrains, shape of chassis, etc.~\cite{Markel:JPS02}. 
 However, it is not practical to use ADVISOR for estimation of power consumption of multiple vehicles at the same time and exploration of design space due to the significant time overhead. 
 So, instead of using ADVISOR for the speed optimization, we use ADVISOR for the model coefficient extraction. 
-In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR.
+In other words, we use the same form of polynomial as~\eqref{eq:EV_specific_model} but derive the coefficients by running ADVISOR. However, the BEV models in ADVISOR is outdated and limited, we collected up-to-date data for modern BEVs and their experimental data.
+
 We implement several types of BEV power model based on the vehicle specifications and reports for the driving performance and range at various constant road slopes~\cite{GM_Bolt:official,Tesla_ModelS:official,GM_Spark:official,BYD_K9:official,Tesla_Roadster:official}. 
 Table \ref{table:Coeff_EVs} summarizes the model coefficients of \eqref{eq:EV_specific_model} and \eqref{eq:regen_model} of each BEV. 
 
@@ -141,52 +142,75 @@ Table \ref{table:Coeff_EVs} summarizes the model coefficients of \eqref{eq:EV_sp
 
 \subsection{Motivational Example}
 
-\begin{figure}	%Fig. 1
-\centering
-%\includegraphics[width=0.9\hsize]{Figures/DSE.pdf}
-\caption{Design space exploration of (a) Tesla Model S and (b) BYD K9.}
-\label{fig:DSE}
-\end{figure} 
+%\begin{figure}	%Fig. 1
+%\centering
+%\includegraphics[width=0.8\hsize]{Figures/DSE.pdf}
+%\caption{Design space exploration of (a) Tesla Model S and (b) BYD K9.}
+%\label{fig:DSE}
+%\end{figure} 
 
 
-We first demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on an BEV sedan (Model S) and bus (K9) are shown in Fig.~\ref{fig:DSE}. 
+We first demonstrate how the cruising speed, acceleration and deceleration affect BEV energy consumption. We perform a design space exploration (DSE) for all feasible BEV speeds and the acceleration pairs. The results of DSE on a BEV sedan (Model S) and electric bus (K9) are shown in Fig.~\ref{fig:DSE}. 
 We obtain the minimum-energy speed and the initial and final acceleration for a given driving distance. 
-The point at the minimum-energy consumption per distance (Wh/km) represents the least-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs also completely changes by the BEV type. 
-Each BEV type has different curb weight, motor specification, body shape, and tire, which affect energy consumption by acceleration and cruising speed, and, therefore, each BEV type has different least-energy-constant-speed driving.
+The point at the minimum-energy consumption per distance (Wh/km) represents the minimum-energy-constant-speed driving. The energy consumption by the cruising speed and acceleration pairs is largely different by the BEV type. 
+Each BEV type has different curb weight, motor specification, body shape, and tire, which affect energy consumption by acceleration and cruising speed, and, therefore, each BEV type has different minimum-energy-constant-speed driving.
 
 \subsection{Problem formulation} \label{subsec:problem}
 
-\begin{figure}	%Fig. 2
-\centering
+%\begin{figure}	%Fig. 2
+%\centering
 %\includegraphics[width=1.0\hsize]{Figures/Example.pdf}
-\caption{An example of a formation driving of heterogeneous BEVs on a single lane.}
-\label{fig:example}
-\end{figure} 
+%\caption{An example of a formation driving of heterogeneous BEVs on a single lane.}
+%\label{fig:example}
+%\end{figure} 
 
-A set of formation BEVs on the same lane. $N$ BEVs, and a BEV $EV_i$ has a power models defined by~\eqref{eq:dynamics_model}, \eqref{eq:EV_specific_model}, \eqref{eq:regen_model}, and related coefficients in Table~\ref{table:Coeff_EVs}.
-No interference is assumed for the formation, i.e., no other vehicles, no pedestrians, etc.
+A set of formation BEVs are on the same lane. Each BEV $EV_i$ of $N$ BEVs has its power model defined by~\eqref{eq:dynamics_model}, \eqref{eq:EV_specific_model}, \eqref{eq:regen_model}, and related coefficients in Table~\ref{table:Coeff_EVs}.
+No interference is assumed for the formation, i.e., no other vehicles, no pedestrians, etc., nearby the formation are assumed.
 The formation driving consists of three stages: a constant acceleration, a constant-speed cruising and a constant deceleration.
-A segment of the formation driving is from a signal to a signal, a stop sign to a stop sign, and so forth.
-Use of a V2V communication, BEVs in the same formation can share their vehicle information, i.e., power model coefficients.
+A segment of the formation driving is between two traffic signals, between two stop signs, and so forth.
+Use of a V2V communication, BEVs in the same formation share their vehicle information, i.e., power model coefficients.
 Each BEV weight is defined by the curb weight and the payload: passengers and cargos. The curb weight is known a priori, and the payload is measured by the sensor. 
 
-Baseline is defined as following:
+We define the baseline as follows:
 \begin{enumerate}
-\item Ideal driving: each vehicle has its own minimum-energy acceleration, cruising speed and deceleration. 
-It is permitted to pass a preceding vehicle.
-\item Bounded driving: each vehicle has its own minimum-energy acceleration, cruising speed and deceleration guideline. If the acceleration or cruising speed of the preceding vehicle is slower than that of the following vehicle, the acceleration or cruising speed of the following vehicle is bounded to that of the preceding vehicle.
+\item Independent eco-driving: each BEV has its own minimum-energy acceleration, cruising speed and deceleration. 
+It is permitted to pass a preceding vehicle. This is possible when each BEV occupies its own lane. This is used for a golden reference to show how the proposed method is close to the ideal case.
+\item Following the preceding vehicle: each BEV has its own minimum-energy acceleration, cruising speed and deceleration guideline. However, the acceleration or cruising speed of the following BEV is bounded by those of the preceding BEV.
 \end{enumerate}
 
 %Problem
-For a given formation, a set of BEV and their order, minimize the total energy consumption.
-The formation acceleration, cruising speed and deceleration is defined by the recommended reference. Each BEV may not follow the formation driving reference as long as it does not interfere other BEV formation driving. For example, the first BEV may be driven faster than the formation cruising speed as long as it exhibits a smaller energy consumption.
-Calculate the least-energy acceleration, cruising speed and deceleration.
+The formation eco-driving problem can be rewritten such that for a given set of formation with the BEV models and lineup order, we minimize the total formation driving energy consumption.
+The problem formulation accommodates a more realistic situation. The formation acceleration, cruising speed and deceleration are regarded as a reference. Each BEV may not follow the formation driving reference as long as it does not interfere other BEV formation driving. For example, the first BEV may be driven faster than the formation cruising speed as long as it exhibits a smaller energy consumption.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Results}\label{sec:exp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Driving Comparison by Vehicle Type}
+%\subsection{Comparison by Vehicle Types}
+
+
+For more comprehensive comparison, we assume several driving cases of five BEVs summarized in Table~\ref{table:list_EVs}. A formation is Chevrolet Spark (tail) -- Tesla Roadster -- Tesla Model S -- Chevrolet Bolt -- BYD K9 (head.)
+The driving segment distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
+Fig.~\ref{fig:hetero_driving}(a) shows the independent eco-driving of the five BEVs over time. Independent eco-driving is not a formation driving, and thus each BEV arrives at the endpoint at different times.
+K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among the BEVs in this example. 
+Fig.~\ref{fig:hetero_driving}(b) shows the drivings of the five BEVs on a single lane, and no passing is allowed. 
+
+%\begin{figure}	%Fig. 3
+%\centering
+%\includegraphics[width=0.9\hsize]{Figures/Heterogeneous_driving.pdf}
+%\caption{Heterogeneous BEV driving by (a) passing a preceding vehicle is permitted, and (b) passing is not permitted.}
+%\label{fig:hetero_driving}
+%\end{figure} 
+
+
+One of the baseline setups, the following-the-preceding-vehicle policy, enforces the acceleration and cruising speed are bounded by those of the preceding vehicle while the preceding vehicle accelerates and/or cruises by its own eco-driving policy or by its preceding BEV. Therefore, this particular example enforces all the BEVs in the formation to have the acceleration and cruising speed bounded by those of K9. Total energy consumption of the five BEVs is as 109.7\% compared with the independent eco-driving. We demonstrate the independent eco-driving baseline, which is not practical in most situations, just to show how the proposed formation eco-driving is close to the upper bound of eco-driving.
+On the other hands, the formation driving consumes only 104.0\% of energy consumption of the independent eco-driving with the proposed formation eco-driving~\ref{subsec:problem}.
+
+We further look into the formation eco-driving with 10 heterogeneous BEVs summarized in Table~\ref{table:list_formation}.
+Fig.~\ref{fig:bar_graph} shows the comparisons of the energy consumption of 10 BEVs for the formation driving. Blue bars indicate the energy consumption of the  following-the-preceding-vehicle baseline. Blue bars show 100\% energy consumption in Fig.~\ref{fig:bar_graph}. Green bars indicate the energy consumption by the proposed formation eco-driving, and orange bars indicate the independent eco-driving.
+The energy gain by the proposed formation eco-driving compared with following-the-preceding-vehicle baseline is from 1.41\% to 12.81\%. 
+
+%\subsection{Driving Case Study}
 
 %\begin{table} 	%Table 2.
 %\centering
@@ -200,71 +224,47 @@ Calculate the least-energy acceleration, cruising speed and deceleration.
 %3		&Model S	&sedan	\\ \cline{1-3}
 %\end{tabular}
 %\end{table}
-
-\begin{figure}	%Fig. 3
-\centering
-%\includegraphics[width=1.0\hsize]{Figures/Heterogeneous_driving.pdf}
-\caption{Heterogeneous BEV driving by (a) passing a preceding vehicle is permitted, and (b) passing is not permitted.}
-\label{fig:hetero_driving}
-\end{figure} 
-
-We assume an example driving of five BEVs in Table~\ref{table:list_EVs}. A formation is Spark (last) - Roadster - Model S - Bolt - K9 (lead.)
-The distance of this example is 500 m, and each BEV has its own minimum-energy acceleration and cruising speed. 
-Fig.~\ref{fig:hetero_driving}(a) shows the ideal driving of the five BEVs over time if it is permitted to pass a preceding vehicle.  
-Each BEV arrives at the endpoint in different time because they drive with different acceleration and cruising speed.
-K9 starts at the forefront on the starting point. But, this BEV arrives at the endpoint the latest because the minimum-energy cruising speed of K9 is the slowest among all BEVs.
-Fig.~\ref{fig:hetero_driving}(b) shows the drivings of the five BEVs if it is not permitted to pass a preceding vehicle. 
-
-In the case of conventional bounded driving, the acceleration and cruising speed are bounded to those of the preceding vehicle. Therefore, acceleration and cruising speed of all BEVs are bounded to those of K9 in this example. Total energy consumption of the five BEVs is as 109.7\% of the energy consumption of the ideal driving.
-On the other hands, if they drive with the proposed driving guideline mentioned in Section~\ref{subsec:problem}, it consume only 104.0\% of energy consumption of the ideal driving.
-This means that increasing the acceleration and cruising speed of the bus is more efficient for all BEVs in the given formation.
-
-\subsection{Driving Case Study}
-
+%
 %\begin{table} 	%Table 3.
 %\centering
 %\small
 %\caption{List of heterogeneous driving formations.}
 %\label{table:list_formation}
 %\begin{tabular}{|c|c|} \hline
-%No.	&EV formation from last to lead	\\ \hline
-%1	&3 2 3 5 3 5 1 5 3 4	\\ \hline
-%2	&3 2 3 5 3 5 3 4 5 1	\\ \hline
-%3	&3 5 3 4 5 3 5 3 2 1	\\ \hline
-%4	&4 3 2 3 5 3 5 1 5 3	\\ \hline
+%Formations	& BEV formation from the tail to head	\\ \hline
+%A	&3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 1 -- 5 -- 3 -- 4	\\ \hline
+%B	&3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 3 -- 4 -- 5 -- 1	\\ \hline
+%C	&3 -- 5 -- 3 -- 4 -- 5 -- 3 -- 5 -- 3 -- 2 -- 1	\\ \hline
+%D	&4 -- 3 -- 2 -- 3 -- 5 -- 3 -- 5 -- 1 -- 5 -- 3	\\ \hline
 %\end{tabular}
 %\end{table}
-
-\begin{figure}	%Fig. 4
-\centering
+%
+%\begin{figure}	%Fig. 4
+%\centering
 %\includegraphics[width=1.0\hsize]{Figures/Bar_graph.pdf}
-\caption{Heterogeneous driving results by BEV formations.}
-\label{fig:bar_graph}
-\end{figure} 
+%\caption{Heterogeneous driving results by BEV formations.}
+%\label{fig:bar_graph}
+%\end{figure} 
 
-We assume a case study of heterogeneous BEV driving with 10 BEVs. Table~\ref{table:list_formation} shows the formations of 10 BEVs. 
-Fig.~\ref{fig:bar_graph} shows the comparisons of the energy consumption of 10 BEVs for the driving. Blue bars indicate the energy consumption by the bounded driving, in which the vehicle driving is bounded by the preceding vehicle. Blue bars show 100\% energy consumption in this figure. Green bars indicate the energy consumption by the proposed group driving method, and orange bars indicate ideal driving, which is possible to pass a preceding BEV.
-The energy gain by the proposed group driving compared with the bounded driving is from 1.41\% to 12.81\%. 
 
-In case of formation 1, the bus is lead, and it is very common when group driving is limited by a bus ahead. In this formation, drivings of all BEVs are bounded to the least-energy-constant-speed driving of the bus. The gain by the proposed group driving is 12.81\% compared with the bounded driving.
-In case of formation 4, the least-energy-constant-speeds of two leading BEVs (hatchback and convertible) are faster than a recommended reference, and that of the last BEV (bus) is slower than the reference. Therefore, these three BEVs drive their own optimal, and only seven BEVs follow the reference as shown in Fig.~\ref{fig:driving_comp}.
 
-\begin{figure}	%Fig. 5
-\centering
-%\includegraphics[width=1.0\hsize]{Figures/Driving_comparison.pdf}
-\caption{Heterogeneous BEV driving result of  (a) bounded driving and (b) proposed driving in case of formation 4.}
-\label{fig:driving_comp}
-\end{figure} 
+Formation A has the electric bus at the head of the formation, which it is quite common in a city driving. Drivings of all BEVs are bounded by the minimum-energy cruising speed of the electric bus. The gain by the proposed formation eco-driving is 12.81\% compared with the-following the-preceding-vehicle baseline.
+By contrast, the minimum-energy cruising speeds of two leading BEVs (hatchback and convertible) are faster than a recommended reference, and that of the last BEV (bus) is slower than the reference in Formation D. Therefore, these three BEVs drive their own optimal eco-driving speed, and only seven BEVs follow the formation eco-driving reference as shown in Fig.~\ref{fig:driving_comp}.
+
+%\begin{figure}	%Fig. 5
+%\centering
+%\includegraphics[width=0.9\hsize]{Figures/Driving_comparison.pdf}
+%\caption{Heterogeneous BEV driving results of (a) following the preceding vehicle and (b) formulation eco-driving in case of formation D.}
+%\label{fig:driving_comp}
+%\end{figure} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section*{Acknowledgment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%This work was supported by the National Research Foundation of Korea(NRF) grant funded by the Korea government(MSIP) (No.2015R1A2A1A09005694)
+This paper demonstrates how formation driving can potentially save significant amount of energy consumption of BEVs when the formation speed is elaborated based on accurate BEV power models. Unlike the previous work, this paper is the first to introduce how multiple BEV driving can be coordinated in terms of energy consumption to our knowledge. The examples are very common in real driving situations, and the results show 12.81\% total energy saving of the whole formation of BEVs compared with the baseline, which is also very common in real driving situations. 
+
 
 \bibliographystyle{ieeetr}
 \bibliography{EV}
